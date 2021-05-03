@@ -55,16 +55,17 @@ class LibraryTest {
 }
 ```
 
-### other extensions
+### Which Extensions Should I use?
 
-`CommitOnGreenExtension` will not revert anything but prompt you to commit each time tests pass.
+|- I want to -|- Use Extension -|
+|-------------|-----------------|
+| Only commit on Green | CommitOnGreenExtension |
+| Full TRC - but don't bother me asking for a commit message | SilentTestCommitRevertMainExtension |
+| Don't revert my tests, but do everything else | TestCommitRevertMainExtension |
+| Don't revert my test, otherwise full TRC + be really quick on a Mac | FastTestCommitRevertMainExtension |
 
-`FastTestCommitRevertMainExtension` will use a apple script dialog for the commit message which is
-much faster than the java dialog.
+**Syntax:**`@ExtendWith(<from_above>.class)`
 
-`SilentTestCommitRevertMainExtension`will not spawn the commit message dialog.
-
-`TestCommitRevertMainExtension` will not revert your tests but only your main folder.
 
 ## Limitations
 
